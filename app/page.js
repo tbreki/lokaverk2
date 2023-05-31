@@ -1,5 +1,5 @@
 import React from 'react'
-import Navigation from '../components/LinkButton'
+import Navigation from '@/components/Navigation'
 import Image from 'next/image'
 
 
@@ -11,7 +11,7 @@ export default function Home() {
     
     <main>
      <div className="flex sm:justify-center space-x-4">
-     <Navigation/>
+     
      </div>
      
 
