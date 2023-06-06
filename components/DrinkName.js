@@ -1,22 +1,25 @@
-import drink from "@/pages/Drinks";
-import React from "react";
+import React, { useEffect, useState } from 'react';
 
-const DrinkName = () => {
-  // Retrieve the drink name from local storage
-  let drinkName = "";
+const DrinkDetails = () => {
+  const [drinkName, setDrinkName] = useState(null);
 
-  if (typeof window !== "undefined") {
-    // Check if running in a browser environment
-    drinkName = localStorage.getItem("drink");
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const storedDrinkName = localStorage.getItem('drinkName');
+      setDrinkName(storedDrinkName);
+    }
+  }, []);
+
+  if (!drinkName) {
+    return <div>Loading...</div>;
   }
 
   return (
     <div>
-      
-        <h3>Drink Name: {drink}</h3>
-     
+      {typeof window !== 'undefined' && <h2>{drinkName}</h2>}
+      {/* Other drink details */}
     </div>
   );
 };
 
-export default DrinkName;
+export default DrinkDetails;

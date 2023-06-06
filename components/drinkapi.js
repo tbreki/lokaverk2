@@ -11,19 +11,29 @@ const RandomDrink = () => {
       .then(data => {
         // Update the state with the fetched dish data
         setDrink(data[0]);
+        console.log(data);
+        console.log(data[0].name);
+       localStorage.setItem('drinkName', data[0].name); 
       })
       .catch(error => {
         console.error('Error fetching random drink:', error);
       });
   }, []);
+ 
 
-  if (!drink) {
+  
+
+ 
+   if (!drink) {
     return <div>Loading...</div>;
   }
 
   const { name, image_url } = drink;
 
+  
+
   return (
+
     
       <div className='flex flex-col items-center'>
         <h2 className='text-center  text-maingreen font-bold m-10'>{name}</h2>
@@ -32,6 +42,10 @@ const RandomDrink = () => {
   );
 };
 
+
+
 export default RandomDrink;
+
+
 
 // https://api.punkapi.com/v2/beers/random

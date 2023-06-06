@@ -10,6 +10,9 @@ const RandomDish = () => {
       .then(data => {
         // Update the state with the fetched dish data
         setDish(data.meals[0]);
+       console.log(data.meals[0].strMeal);
+       localStorage.setItem("mealName", data.meals[0].strMeal);
+        //localStorage.setItem('drinkName', data[0].name); 
       })
       .catch(error => {
         console.error('Error fetching random dish:', error);

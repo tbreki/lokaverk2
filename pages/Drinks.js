@@ -15,6 +15,7 @@ export default function drink(){
     const handleButtonClick = () => {
       setShowRandomDrink(true);
       setIsClicked(true);
+      
   
 
     // Retrieve the random drink

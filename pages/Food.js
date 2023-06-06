@@ -12,6 +12,11 @@ export default function Food(){
     const handleButtonClick2 = () => {
       setShowRandomFood(true);
       setIsClicked(true);
+     
+
+    const mealName = localStorage.getItem("mealName");
+    localStorage.setItem("meal",mealName);
+    
     };
     
     
